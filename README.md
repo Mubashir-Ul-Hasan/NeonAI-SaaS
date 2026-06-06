@@ -10,11 +10,6 @@ NeonAI is a full-stack AI SaaS platform that provides a collection of AI-powered
 
 Netlify Link: https://neonai-saas.netlify.app/
 
-```txt
-
-```
-
----
 
 ## Features
 
