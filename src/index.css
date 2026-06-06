@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.1), transparent 32rem),
+    radial-gradient(circle at top right, rgba(6, 182, 212, 0.08), transparent 30rem),
+    #f8fafc;
+  color: #020617;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.22), transparent 34rem),
+    radial-gradient(circle at top right, rgba(6, 182, 212, 0.14), transparent 30rem),
+    #050816;
+  color: #ffffff;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(124, 58, 237, 0.24);
+  color: #4c1d95;
+}
+
+.dark ::selection {
+  background: rgba(34, 211, 238, 0.24);
+  color: #ffffff;
+}
+
+/* Clean premium scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.55);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.5);
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Reusable custom classes */
+.nav-link {
+  position: relative;
+  color: rgb(71 85 105);
+  font-size: 0.875rem;
+  font-weight: 800;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.dark .nav-link {
+  color: rgb(203 213 225);
+}
+
+.nav-link:hover {
+  color: rgb(15 23 42);
+  transform: translateY(-1px);
+}
+
+.dark .nav-link:hover {
+  color: white;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.45rem;
+  height: 0.15rem;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7c3aed, #d946ef, #06b6d4);
+  transition: width 180ms ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.premium-glow {
+  position: relative;
+}
+
+.premium-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #7c3aed, #d946ef, #06b6d4);
+  opacity: 0.35;
+  filter: blur(18px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.glass-card {
+  border: 1px solid rgba(226, 232, 240, 0.75);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(24px);
+}
+
+.dark .glass-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.46);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+}
+
+/* Smooth page entrance */
+@keyframes quickai-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-up {
+  animation: quickai-fade-up 600ms ease both;
+}
+
+/* Soft animated background blob */
+@keyframes quickai-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0) scale(1.03);
+  }
+}
+
+.animate-float {
+  animation: quickai-float 6s ease-in-out infinite;
+}
+
+/* Nice focus ring */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 0 6px rgba(124, 58, 237, 0.42);
+}
+
+.dark .focus-ring:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(15, 23, 42, 0.95),
+    0 0 0 6px rgba(34, 211, 238, 0.38);
+}
+
+/* Input polish */
+input::placeholder,
+textarea::placeholder {
+  color: rgb(148 163 184);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgb(100 116 139);
+}
+
+/* Better autofill colors */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-text-fill-color: #020617;
+  box-shadow: 0 0 0 1000px #f8fafc inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark textarea:-webkit-autofill,
+.dark select:-webkit-autofill {
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: 0 0 0 1000px #0f172a inset;
+}
+
+.checkerboard {
+  background-color: #f8fafc;
+  background-image:
+    linear-gradient(45deg, rgba(100, 116, 139, 0.22) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(100, 116, 139, 0.22) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(100, 116, 139, 0.22) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(100, 116, 139, 0.22) 75%);
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0;
+  background-size: 20px 20px;
+}
+
+.dark .checkerboard {
+  background-color: #0f172a;
+  background-image:
+    linear-gradient(45deg, rgba(148, 163, 184, 0.16) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(148, 163, 184, 0.16) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(148, 163, 184, 0.16) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(148, 163, 184, 0.16) 75%);
+}

@@ -1,0 +1,85 @@
+[build]
+command = "npm run build"
+publish = "dist"
+functions = "netlify/functions"
+
+[functions]
+node_bundler = "esbuild"
+included_files = ["server/**"]
+
+[dev]
+command = "npm run dev"
+targetPort = 5173
+port = 8888
+functions = "netlify/functions"
+autoLaunch = false
+
+[[redirects]]
+from = "/api/generate-article"
+to = "/.netlify/functions/generate-article"
+status = 200
+
+[[redirects]]
+from = "/api/generate-titles"
+to = "/.netlify/functions/generate-titles"
+status = 200
+
+[[redirects]]
+from = "/api/generate-image"
+to = "/.netlify/functions/generate-image"
+status = 200
+
+[[redirects]]
+from = "/api/remove-background"
+to = "/.netlify/functions/remove-background"
+status = 200
+
+[[redirects]]
+from = "/api/remove-object"
+to = "/.netlify/functions/remove-object"
+status = 200
+
+[[redirects]]
+from = "/api/review-resume"
+to = "/.netlify/functions/review-resume"
+status = 200
+
+[[redirects]]
+from = "/api/get-creations"
+to = "/.netlify/functions/get-creations"
+status = 200
+
+[[redirects]]
+from = "/api/delete-creation"
+to = "/.netlify/functions/delete-creation"
+status = 200
+
+[[redirects]]
+from = "/api/admin-stats"
+to = "/.netlify/functions/admin-stats"
+status = 200
+
+[[redirects]]
+from = "/api/create-checkout"
+to = "/.netlify/functions/create-checkout"
+status = 200
+
+[[redirects]]
+from = "/api/create-billing-portal"
+to = "/.netlify/functions/create-billing-portal"
+status = 200
+
+[[redirects]]
+from = "/api/clerk-webhook"
+to = "/.netlify/functions/clerk-webhook"
+status = 200
+
+[[redirects]]
+from = "/api/get-user-summary"
+to = "/.netlify/functions/get-user-summary"
+status = 200
+
+[[redirects]]
+from = "/api/health"
+to = "/.netlify/functions/health"
+status = 200
