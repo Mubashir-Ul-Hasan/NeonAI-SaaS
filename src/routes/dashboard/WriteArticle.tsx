@@ -13,7 +13,6 @@ import {
   PenLine,
   RefreshCw,
   Sparkles,
-  WandSparkles,
 } from "lucide-react";
 
 import { Badge } from "../../components/ui/Badge";
@@ -324,13 +323,6 @@ export default function WriteArticle() {
                     ))}
                   </select>
 
-                  <div className="mt-4 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/[0.04]">
-                    <div className="flex items-start gap-3">
-                      <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-300">
-                        <WandSparkles size={18} />
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
 
