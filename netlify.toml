@@ -83,3 +83,10 @@ status = 200
 from = "/api/health"
 to = "/.netlify/functions/health"
 status = 200
+
+# React Router / SPA fallback
+# This must stay at the bottom, after all API redirects.
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
