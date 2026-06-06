@@ -232,14 +232,14 @@ export default function WriteArticle() {
   }
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
-      <section className="space-y-6">
+    <div className="grid min-w-0 max-w-full gap-4 overflow-hidden sm:gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+      <section className="min-w-0 space-y-6">
         <Card padding="xl" className="relative overflow-hidden">
           <div className="pointer-events-none absolute right-[-6rem] top-[-6rem] h-56 w-56 rounded-full bg-violet-500/10 blur-3xl" />
 
           <div className="relative">
             <div className="flex items-start justify-between gap-4">
-              <div>
+              <div className="min-w-0">
                 <Badge
                   variant="success"
                   icon={<PenLine className="h-3.5 w-3.5" />}
@@ -457,10 +457,10 @@ export default function WriteArticle() {
         </Card>
       </section>
 
-      <section className="space-y-6">
-        <Card padding="xl" className="min-h-[42rem]">
-          <div className="flex flex-col justify-between gap-4 border-b border-slate-200 pb-5 dark:border-white/10 sm:flex-row sm:items-start">
-            <div>
+      <section className="min-w-0 space-y-6">
+        <Card padding="xl" className="min-h-[42rem] min-w-0 overflow-hidden">
+          <div className="flex min-w-0 flex-col justify-between gap-4 border-b border-slate-200 pb-5 dark:border-white/10 sm:flex-row sm:items-start">
+            <div className="min-w-0">
               <Badge
                 variant={hasResult ? "success" : "muted"}
                 icon={<FileText className="h-3.5 w-3.5" />}
@@ -468,7 +468,7 @@ export default function WriteArticle() {
                 Output
               </Badge>
 
-              <h2 className="mt-3 text-2xl font-black text-slate-950 dark:text-white">
+              <h2 className="mt-3 max-w-full break-words text-xl font-black leading-tight text-slate-950 dark:text-white sm:text-2xl">
                 {articleTitle || "Generated article preview"}
               </h2>
 
@@ -479,7 +479,7 @@ export default function WriteArticle() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex w-full flex-wrap gap-2 sm:w-auto">
               <Button
                 variant="secondary"
                 size="sm"
@@ -502,7 +502,7 @@ export default function WriteArticle() {
             </div>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-6 min-w-0 overflow-hidden">
             {isGenerating && !streamedArticle && (
               <div className="grid min-h-[26rem] place-items-center">
                 <div className="text-center">
@@ -511,7 +511,7 @@ export default function WriteArticle() {
                   </div>
 
                   <h3 className="mt-5 text-xl font-black text-slate-950 dark:text-white">
-                    Writing article for you...
+                    Gemini is writing your article...
                   </h3>
 
                   <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-400">
@@ -536,8 +536,8 @@ export default function WriteArticle() {
             )}
 
             {hasResult && (
-              <article className="prose prose-slate max-w-none dark:prose-invert">
-                <pre className="whitespace-pre-wrap rounded-[2rem] border border-slate-200 bg-slate-50 p-5 font-sans text-sm leading-7 text-slate-700 dark:border-white/10 dark:bg-slate-950/60 dark:text-slate-200">
+              <article className="max-w-full overflow-hidden">
+                <pre className="max-w-full overflow-x-hidden whitespace-pre-wrap break-words rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 font-sans text-sm leading-7 text-slate-700 [overflow-wrap:anywhere] dark:border-white/10 dark:bg-slate-950/60 dark:text-slate-200 sm:rounded-[2rem] sm:p-5">
                   {streamedArticle}
                 </pre>
               </article>
@@ -581,7 +581,7 @@ function StatTile({
   icon: React.ReactNode;
 }) {
   return (
-    <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/[0.04]">
+    <div className="min-w-0 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/[0.04]">
       <div className="flex items-center gap-3">
         <div className="grid h-10 w-10 place-items-center rounded-2xl bg-violet-500/10 text-violet-600 dark:text-violet-300">
           {icon}
