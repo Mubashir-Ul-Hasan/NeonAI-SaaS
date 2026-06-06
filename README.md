@@ -8,7 +8,7 @@ NeonAI is a full-stack AI SaaS platform that provides a collection of AI-powered
 
 ## Live Demo
 
-Add your deployed Netlify link here after deployment:
+Netlify Link: https://neonai-saas.netlify.app/
 
 ```txt
 
@@ -215,7 +215,7 @@ Clone the repository:
 ```bash
 
 
-
+git clone https://github.com/Mubashir-Ul-Hasan/NeonAI-SaaS
 
 cd neonai-saas
 ```
