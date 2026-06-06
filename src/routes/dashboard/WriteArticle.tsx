@@ -329,17 +329,6 @@ export default function WriteArticle() {
                       <div className="grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-300">
                         <WandSparkles size={18} />
                       </div>
-
-                      <div>
-                        <p className="text-sm font-black text-slate-950 dark:text-white">
-                          Backend connected
-                        </p>
-                        <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">
-                          This page now calls{" "}
-                          <span className="font-black">/api/generate-article</span>{" "}
-                          and saves the result to Neon.
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>
