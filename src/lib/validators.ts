@@ -178,7 +178,7 @@ export const generateTitlesSchema = z.object({
 export const generateImageSchema = z.object({
   prompt: promptSchema.max(1200, "Image prompt must be less than 1,200 characters."),
   style: imageStyleSchema,
-  size: imageSizeSchema.default("1024x1024"),
+  size: imageSizeSchema.default("square"),
 });
 
 export const removeBackgroundSchema = z.object({
